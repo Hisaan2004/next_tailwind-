@@ -52,11 +52,11 @@ const toggledown=()=>{
     <div className="flex md:hidden bg-gray-300 w-full h-16 flex flex-row">
       <div className="absolute">
       <button onClick={toggledown}>
-        <Bars3Icon className=" absolute h-10 w-10 text-black font-bold mt-2 ml-2 pd-2" />
+        <Bars3Icon className=" h-10 w-10 text-black font-bold mt-2 ml-2 pd-2" />
       </button>
 
       {open && (
-        <div className="relative top-10 left-0 w-40 h-screen bg-black shadow-lg z-50 p-4">
+        <div className="relative top-2 left-0 w-40 h-screen bg-black shadow-lg z-50 p-4">
           <ul className="space-y-4">
             <li>
               <Link
