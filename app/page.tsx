@@ -6,7 +6,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col justify-between bg-gray-100">
       <div className="flex-grow">
         <Navbar />
-        {/* You can place additional page content here */}
+        {}
       </div>
       <Footer />
     </div>
