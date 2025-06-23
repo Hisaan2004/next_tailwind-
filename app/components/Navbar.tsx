@@ -49,14 +49,14 @@ const toggledown=()=>{
       </Link>
     </div>
     {/*--------------------------------------------------------------------------this is for mobiles----------------------------------------------------------------------*/}
-    <div className="flex md:hidden bg-gray-300 w-full h-16 flex flex-row">
-      <div className="absolute">
+    <div className="flex md:hidden bg-gray-300 w-full h-16 relative justify-between item center">
+      
       <button onClick={toggledown}>
         <Bars3Icon className=" h-10 w-10 text-black font-bold mt-2 ml-2 pd-2" />
       </button>
 
       {open && (
-        <div className="relative top-2 left-0 w-40 h-screen bg-black shadow-lg z-50 p-4">
+        <div className="absolute top-16 left-0 w-40 h-150 bg-black shadow-lg z-50 p-4">
           <ul className="space-y-4">
             <li>
               <Link
@@ -80,11 +80,10 @@ const toggledown=()=>{
           </ul>
         </div>
       )}
-  </div>
+  
 
       {/*<Bars3Icon className="h-8 w-8 text-black font-bold mt-2 ml-2" />*/}
-      <div className="flex-grow"></div>
-      <div>
+      <div className="absolute left-1/2 transform -translate-x-1/2">
       <Link href="/" >
         <img src="https://i.pinimg.com/736x/57/ae/88/57ae8888c6b1601bc3db106e48bac706.jpg"
         alt="homepage"
@@ -92,6 +91,7 @@ const toggledown=()=>{
         </img>
       </Link>
     </div>
+
     <div className="flex-grow"></div>
     <div className="h-10 w-10 mt-2 ml-2 rounded-full overflow-hidden mr-2">
       <Link href="/user">

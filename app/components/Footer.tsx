@@ -33,7 +33,29 @@ const Footer = () => {
           </svg>
         </Link>
       </div>
-      <div className="flex flex-row gap-3 mt-2 ml-2">
+      <div className=" hidden md:flex flex flex-row gap-3 mt-2 ml-2">{/*larger screens*/}
+        <div className="flex flex-col mb-10"><h4 className="font-bold ">Solutions</h4>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Marketing</Link>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Analytics</Link>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Commerce</Link>
+        </div>
+        <div className="flex flex-col mb-10 ml:10 "><h4 className="font-bold ">Support</h4>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Submit ticket</Link>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Documentation</Link>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Guides</Link>
+        </div>
+        <div className="flex flex-col mb-10 ml:10  "><h4 className="font-bold ">Company</h4>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">About</Link>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Blog</Link>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Job</Link>
+        </div>
+        <div className="flex flex-col mb-10 ml:10  "><h4 className="font-bold ">Legal</h4>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Terms of service</Link>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">Privacy policy</Link>
+        <Link href="/user" className="text-gray-500 hover:text-gray-200">License</Link>
+        </div>
+      </div>
+      <div className=" flex md:hidden flex flex-col gap-3 mt-2 ml-2">{/*smaller screens*/}
         <div className="flex flex-col mb-10"><h4 className="font-bold ">Solutions</h4>
         <Link href="/user" className="text-gray-500 hover:text-gray-200">Marketing</Link>
         <Link href="/user" className="text-gray-500 hover:text-gray-200">Analytics</Link>
