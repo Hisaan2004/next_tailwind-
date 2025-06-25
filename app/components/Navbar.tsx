@@ -1,109 +1,70 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react';
 import Link from "next/link";
-import { BellIcon } from '@heroicons/react/24/solid';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+
+const navbarelement = [
+  { label: "About me", id: "Intropage" },
+  { label: "Skills", id: "Skills" },
+  { label: "Projects", id: "Projects" },
+  { label: "Education", id: "Educationpage" },
+];
+
 const Navbar = () => {
-  const [open,setOpen]=useState(false);
-const toggledown=()=>{
-  setOpen(!open);
-}
+  const [open, setOpen] = useState(false);
+  const toggledown = () => setOpen(!open);
+
   return (
-   <div className="min-h-screen flex flex-col justify-between bg-gray-100">
-    <div className="flex-grow">
-    {/*---------------------------------------------------------this is for screen bigger screen----------------------------------------------------------------*/}
-    <div className="hidden md:flex bg-gray-300 w-full h-16 flex flex-row gap-5">
-    <div>
-      <Link href="/" >
-        <img src="https://i.pinimg.com/736x/57/ae/88/57ae8888c6b1601bc3db106e48bac706.jpg"
-        alt="homepage"
-          className="h-10 w-10 object-cover mt-2 ml-2 rounded">
+    <div className="bg-gray-100">
+      {/* Desktop Navbar */}
+      <div className="hidden md:flex bg-gray-300 w-full h-16 items-center px-4 gap-6">
+        <Link href="/">
+          <img src="https://i.pinimg.com/736x/57/ae/88/57ae8888c6b1601bc3db106e48bac706.jpg" alt="homepage" className="h-10 w-10 rounded" />
+        </Link>
+        {navbarelement.map((item, index) => (
+          <a
+            key={index}
+            href={`#${item.id}`}
+            className="text-black font-bold hover:bg-gray-400 hover:border-b-2 rounded px-2 py-1"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
 
-        </img>
-      </Link>
-    </div>
-      <Link href="/user" className="text-black mt-4 mb-4 font-bold hover:bg-gray-400 hover:border-b-2 rounded px-2 ">
-      Dashboard
-      </Link>
-    
-      <Link href="/user" className="text-black mt-4 mb-4 font-bold hover:bg-gray-400 hover:border-b-2 rounded px-2 ">
-      Team
-      </Link>
+      {/* Mobile Navbar */}
+      <div className="md:hidden bg-gray-300 w-full h-16 flex items-center justify-between px-4 relative">
+        <button onClick={toggledown}>
+          <Bars3Icon className="h-8 w-8 text-black" />
+        </button>
 
-      <Link href="/user" className="text-black mt-4 mb-4 font-bold hover:bg-gray-400 hover:border-b-2 rounded px-2 ">
-      Project
-      </Link>
-    
-      <Link href="/user" className="text-black mt-4 mb-4 font-bold hover:bg-gray-400 hover:border-b-2 rounded px-2 ">
-      Calender
-      </Link>
-    <div className="flex-grow"></div>
-    <div className=" text-black mt-4 mb-4 font-bold hover:bg-gray-400 hover:border-b-2 rounded w-7 h-7 ">
-      <BellIcon/>
-    </div>
-      <Link href="/user"  className="h-10 w-10 mt-2 ml-2 rounded-full overflow-hidden mr-2">
-        <img src="https://t4.ftcdn.net/jpg/06/38/85/49/240_F_638854973_hgAF7vx2dRayo1JOUdzgLt8o488gMwjS.jpg"
-          alt="user image">
-        </img>
-      </Link>
-    </div>
-    {/*--------------------------------------------------------------------------this is for mobiles----------------------------------------------------------------------*/}
-    <div className="flex md:hidden bg-gray-300 w-full h-16 relative justify-between item center">
-      
-      <button onClick={toggledown}>
-        <Bars3Icon className=" h-10 w-10 text-black font-bold mt-2 ml-2 pd-2" />
-      </button>
+        <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
+          <img src="https://i.pinimg.com/736x/57/ae/88/57ae8888c6b1601bc3db106e48bac706.jpg" alt="homepage" className="h-10 w-10 rounded" />
+        </Link>
 
-      {open && (
-        <div className="absolute top-16 left-0 w-40 h-150 bg-black shadow-lg z-50 p-4">
-          <ul className="space-y-4">
-            <li>
-              <Link
-                href="/user"
-                className="block text-white font-bold hover:bg-gray-700 px-4 py-2 rounded"> Dashboard
-                </Link>
-            </li>
-            <li>
-              <Link
-                href="/user"className="block text-white font-bold hover:bg-gray-700 px-4 py-2 rounded">Team
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/user"className="block text-white font-bold hover:bg-gray-700 px-4 py-2 rounded">Project
-              </Link>
-            </li>
-            <li>
-              <Link href="/user"className="block text-white font-bold hover:bg-gray-700 px-4 py-2 rounded">Calendar</Link>
-            </li>
-          </ul>
-        </div>
-      )}
-  
+        <Link href="/user">
+          <img src="https://t4.ftcdn.net/jpg/06/38/85/49/240_F_638854973_hgAF7vx2dRayo1JOUdzgLt8o488gMwjS.jpg" alt="user" className="h-10 w-10 rounded-full" />
+        </Link>
 
-      {/*<Bars3Icon className="h-8 w-8 text-black font-bold mt-2 ml-2" />*/}
-      <div className="absolute left-1/2 transform -translate-x-1/2">
-      <Link href="/" >
-        <img src="https://i.pinimg.com/736x/57/ae/88/57ae8888c6b1601bc3db106e48bac706.jpg"
-        alt="homepage"
-          className="h-10 w-10 object-cover mt-2 ml-2 rounded ">
-        </img>
-      </Link>
+        {open && (
+          <div className="absolute top-16 left-0 w-full bg-black p-4 z-50">
+            <ul className="space-y-4">
+              {navbarelement.map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={`#${item.id}`}
+                    className="block text-white font-bold hover:bg-gray-700 px-4 py-2 rounded"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
+  );
+};
 
-    <div className="flex-grow"></div>
-    <div className="h-10 w-10 mt-2 ml-2 rounded-full overflow-hidden mr-2">
-      <Link href="/user">
-        <img src="https://t4.ftcdn.net/jpg/06/38/85/49/240_F_638854973_hgAF7vx2dRayo1JOUdzgLt8o488gMwjS.jpg"
-          alt="user image">
-        </img>
-      </Link>
-    </div>
-    </div>
-    </div>
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;

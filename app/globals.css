@@ -26,3 +26,6 @@ body {
   overflow: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
