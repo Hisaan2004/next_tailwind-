@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 const Intropage = () => {
   return (
     <div className="min-h-screen bg-white px-8 py-12">
-      <h1 className="font-bold text-6xl text-black text-center mb-10">About Me</h1>
+      {/*<h1 className="font-bold text-6xl text-black text-center mb-10">About Me</h1>*/}
       <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
         <div className="flex flex-col items-center">
           <Image
