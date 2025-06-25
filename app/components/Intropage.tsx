@@ -30,11 +30,11 @@ const Intropage = () => {
         </div>
         <div className="hidden lg:block w-px h-60 bg-gray-400"></div>
         <div className="flex flex-col max-w-xl text-center lg:text-left">
-          <p className="lg:text-4xl font-semibold mb-2 text-black">Hi, I'm Hisaan Sakhawat</p>
+          <p className="lg:text-4xl font-semibold mb-2 text-black">Hi, I&apos;m Hisaan Sakhawat</p>
           <p className="text-black text-2xl mb-4">
             A Computer Science student passionate about crafting modern, user-friendly web experiences.
             I enjoy turning ideas into real-world projects through clean, responsive design and interactive functionality.
-            Whether it's frontend interfaces or backend logic, I love building things that are both beautiful and functional.
+            Whether it&apos;s frontend interfaces or backend logic, I love building things that are both beautiful and functional.
           </p>
           <a
             href="/hisaan(3).pdf"
